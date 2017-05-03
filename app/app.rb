@@ -21,3 +21,4 @@ class BookmarkManager < Sinatra::Base
   end
 
 end
+
