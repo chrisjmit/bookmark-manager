@@ -7,8 +7,8 @@ require_relative 'data_mapper_setup'
 class BookmarkManager < Sinatra::Base
 
   get '/links' do
-   @links = Link.all
-   erb :'links/index'
+    @links = Link.all
+    erb :'links/index'
   end
 
   get '/links/new' do
