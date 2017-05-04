@@ -20,7 +20,7 @@ feature 'Creating links' do
     fill_in 'tags', with: 'Music'
     click_button 'Create link'
     link = Link.first
-    expect(link.tags.map(&:name)).to include('music')
+    expect(link.tags.map(&:name)).to include('Music')
   end
 
 end
