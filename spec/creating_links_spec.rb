@@ -17,9 +17,10 @@ feature 'Creating links' do
     visit '/links/new'
     fill_in 'url',   with: 'http://www.quietus.com/'
     fill_in 'title', with: 'Quietus'
-    fill_in 'tag', with: 'Music'
+    fill_in 'tags', with: 'Music'
     click_button 'Create link'
-    expect(page).to have_content('Music')
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('music')
   end
 
 end
