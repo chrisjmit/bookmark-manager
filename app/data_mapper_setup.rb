@@ -3,6 +3,7 @@ require 'dm-postgres-adapter'
 
 require_relative 'models/tag'
 require_relative 'models/link'
+require_relative 'models/user'
 
 DataMapper.setup(:default, "postgres://ugvfwtkudnhbxi:d8ee15b2d11c52fa8662de1d09ec98ad09b37791e3732d382817298f249e7160@ec2-54-83-25-217.compute-1.amazonaws.com:5432/dceefoaibgnt6v")
 DataMapper.finalize
