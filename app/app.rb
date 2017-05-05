@@ -10,6 +10,12 @@ class BookmarkManager < Sinatra::Base
   enable :sessions
   set :sessions_secret, 'super_secret'
 
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+  end
+
   get '/links' do
     @links = Link.all
     erb :'links/index'
@@ -43,12 +49,6 @@ class BookmarkManager < Sinatra::Base
                 password: params[:password])
     session[:user_id] = user.id
     redirect to('/links')
-  end
-
-  helpers do
-    def current_user
-      @current_user ||= User.get(session[:user_id])
-    end
   end
 
 end
